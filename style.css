@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+:root{
+    --lead: #212121;
+    --gold-finger: #f2bd12;
+    --eye-ball: #fffdf7;
+    --hint-yellow: #fcf1cc;
+    --pure-white: #fff;
+}
+
+body{
+    background: var(--eye-ball);
+}
+/* BASIC STYLING */
+a{
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--lead);
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+li{
+    list-style: none;
+}
+.between{
+    justify-content: space-between;
+}
+
+.gap-2{
+    gap: 2rem;
+}
+
+.gap-3{
+    gap: 3rem;
+}
+.wrapper{
+    max-width: 1400px;
+    margin: auto;
+    padding-inline: 0 1.5rem;
+}
+
+
+
+/*HEADER STYLING */
+
+.navbar{
+    min-height: 14vh;
+}
+.logo{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--gold-finger);
+}
+
+.btn{
+    display: inline-block;
+    padding: .9rem 2rem;
+    background: var(--gold-finger);
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    color: var(--pure-white);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover{
+    background: var(--lead);
+
+}
+
+.cart-icon{
+    color: var(--lead);
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.cart-icon .cart-value{
+    position: absolute;
+    top: 50%;
+    right:  -10px;
+    font-size: .85rem;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 100vw;
+    background: var(--gold-finger);
+    color: var(--lead);
+    text-align: center;
+    line-height: 20px;
+}
+
+.desktop-action .hamburger{
+    font-size: 1.5rem;
+    display: none;
+}
+
+
+/*SECTION STYLING */
+
+
+/*FOOTER STYLING */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*MEDIA QUERIES*/
+@media screen and (max-width:780px){
+     .navlist ,
+     .desktop-action .btn {
+        display: none;
+     }
+
+     .desktop-action .hamburger{
+        display: block;
+
+     }
+}
