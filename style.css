@@ -27,6 +27,7 @@ a{
 .flex{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 li{
     list-style: none;
@@ -54,6 +55,13 @@ img{
     margin: auto;
     display: block;
 
+}
+.p-top{
+    padding-top: 10rem;
+
+}
+.text-center{
+    text-align: center;
 }
 
 
@@ -126,8 +134,10 @@ img{
 
 /* Text & image take equal space */
 .content,
-.image-container {
+.image-container,
+.services-card{
     flex: 1;
+    flex-basis: 300px;
 }
 
 /* Image container alignment */
@@ -188,6 +198,52 @@ p {
 
 }
 
+/*SECTION 01*/
+
+h5{
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: var(--gold-finger);
+    text-transform: uppercase;
+}
+
+h2{
+    font-size: 3.7rem;
+    text-transform: capitalize;
+    color: var(--lead);
+}
+h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--lead);
+}
+.service-card h3{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 4rem;
+}
+.service-card{
+    text-align: center;
+    max-width: 220px;
+}
+.image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+
+
+
+
 
 
 /*FOOTER STYLING */
@@ -214,6 +270,8 @@ p {
 
 /*MEDIA QUERIES*/
 @media screen and (max-width:780px){
+
+    /*HEDER STYLING*/
      .navlist ,
      .desktop-action .btn {
         display: none;
@@ -244,5 +302,23 @@ p {
      .mobile-menu.active{
         left: 50%;
         transform: translateX(-50%);
-     }
+ 
+    }
+
+
+    /*SECTINON STYLING*/
+    h1{
+        font-size: 3.6rem;
+
+    }
+    .content{
+        padding-top: 3rem;
+    }
+    .gap-2{
+        gap: 1.4rem;
+    }
+    .gap-4{
+        gap: 4rem;
+
+    }
 }
