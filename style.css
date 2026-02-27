@@ -48,6 +48,14 @@ li{
     padding-inline: 0 1.5rem;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+
+}
+
 
 
 /*HEADER STYLING */
@@ -102,8 +110,84 @@ li{
     display: none;
 }
 
+.mobile-menu {
+    display: none;
+}
+
 
 /*SECTION STYLING */
+
+.hero-section {
+    min-height: calc(100vh - 14vh);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Text & image take equal space */
+.content,
+.image-container {
+    flex: 1;
+}
+
+/* Image container alignment */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMPORTANT: control image size */
+.image-container img {
+    width: 100%;
+    max-width: 450px;   /* prevents image from being too big */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Heading */
+h1 {
+    font-size: 5.6vw;
+    color: var(--lead);
+}
+
+h1 span {
+    color: var(--gold-finger);
+}
+
+/* Paragraph */
+p {
+    font-size: 1.25rem;
+    color: gray;
+    line-height: 1.8rem;
+    font-weight: 400;
+
+}
+
+.para{
+    margin-block: 2rem;
+    max-width: 550px;
+}
+
+.social-icon{
+    background: var(--hint-yellow);
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 1px;
+    transition: .3s ease-in-out;
+
+}
+
+.social-icon:hover{
+    background: var(--lead);
+    color: var(--pure-white);
+
+}
+
 
 
 /*FOOTER STYLING */
@@ -138,5 +222,27 @@ li{
      .desktop-action .hamburger{
         display: block;
 
+     }
+     .mobile-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%) ;
+        width: 20rem;
+        padding: 2rem;
+        background: var(--pure-white);
+        border: .1rem solid var(--gold-finger);
+        border-radius: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.05) 8px 8px 8px;
+        transition:  all .5s ease-in-out;
+     }
+     .mobile-menu.active{
+        left: 50%;
+        transform: translateX(-50%);
      }
 }
