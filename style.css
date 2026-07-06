@@ -476,6 +476,59 @@ input[type="email"]:focus{
     border-top: 1px solid #ddd;
     padding-top: 15px;
 }
+.cart-tab{
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background: #fff;
+    padding: 20px;
+    box-shadow: -5px 0 20px rgba(0,0,0,.1);
+    transition: .4s;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.cart-tab.active{
+    right: 0;
+}
+
+.cart-item{
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.qty-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.qty-box button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #f4b400;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.qty-box span{
+    min-width: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.cart-footer{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 
 

@@ -104,7 +104,7 @@ function loadMenu() {
 }
 
 // ======================
-// ATTACH BUTTON EVENTS
+// BUTTON EVENTS
 // ======================
 
 function attachCartButtons() {
@@ -150,6 +150,30 @@ function addToCart(id) {
 }
 
 // ======================
+// CHANGE QUANTITY
+// ======================
+
+function changeQuantity(id, value) {
+
+    const item = cart.find(
+        product => product.id === id
+    );
+
+    if (!item) return;
+
+    item.quantity += value;
+
+    if (item.quantity <= 0) {
+
+        cart = cart.filter(
+            product => product.id !== id
+        );
+    }
+
+    updateCart();
+}
+
+// ======================
 // UPDATE CART
 // ======================
 
@@ -160,7 +184,7 @@ function updateCart() {
 }
 
 // ======================
-// UPDATE CART COUNTER
+// UPDATE COUNTER
 // ======================
 
 function updateCartCount() {
@@ -193,15 +217,22 @@ function updateCartUI() {
 
         const div = document.createElement("div");
 
-        div.style.borderBottom = "1px solid #ddd";
-        div.style.padding = "10px 0";
+        div.classList.add("cart-item");
 
         div.innerHTML = `
             <h4>${item.name}</h4>
 
-            <p>
-                Qty: ${item.quantity}
-            </p>
+            <div class="qty-box">
+                <button onclick="changeQuantity(${item.id}, -1)">
+                    -
+                </button>
+
+                <span>${item.quantity}</span>
+
+                <button onclick="changeQuantity(${item.id}, 1)">
+                    +
+                </button>
+            </div>
 
             <p>
                 $${(item.price * item.quantity).toFixed(2)}
@@ -211,7 +242,8 @@ function updateCartUI() {
         cartList.appendChild(div);
     });
 
-    cartTotal.textContent = `$${total.toFixed(2)}`;
+    cartTotal.textContent =
+        "$" + total.toFixed(2);
 }
 
 // ======================
