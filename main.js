@@ -13,36 +13,27 @@ const swiper = new Swiper(".mySwiper", {
     },
 });
 
-// ======================
-// PRODUCT DATA
-// ======================
 
-const products = [
-    {
-        id: 1,
-        name: "Double Beef Burger",
-        price: 12.00,
-        image: "Image/burger.png"
-    },
-    {
-        id: 2,
-        name: "Fried Chicken Basket",
-        price: 15.50,
-        image: "Image/fried-chicken.png"
-    },
-    {
-        id: 3,
-        name: "Cheesy Veg Pizza",
-        price: 10.00,
-        image: "Image/pizza.png"
-    },
-    {
-        id: 4,
-        name: "Chicken Roll",
-        price: 8.50,
-        image: "Image/chicken-roll.png"
+
+let products = [];
+
+async function loadProducts() {
+    try {
+
+        const response = await fetch(
+            "http://localhost:5000/api/foods"
+        );
+
+        products = await response.json();
+
+        loadMenu();
+
+    } catch (error) {
+
+        console.log(error);
+
     }
-];
+}
 
 // ======================
 // VARIABLES
@@ -290,4 +281,4 @@ if (hamburger && mobileMenu) {
 // INITIALIZE
 // ======================
 
-loadMenu();
+loadProducts();

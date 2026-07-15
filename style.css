@@ -529,7 +529,9 @@ input[type="email"]:focus{
     font-size: 20px;
     font-weight: bold;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 
 
 
